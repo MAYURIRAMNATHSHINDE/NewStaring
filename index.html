@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        .outer-container {
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+            background-image: url('https://t4.ftcdn.net/jpg/10/32/71/25/240_F_1032712537_eO26gHYXrqQxxgkmzdcLFnho9sSFvTXH.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 120px;
+        }
+
+        .nav-bar .name img {
+            margin: 20px;
+            margin-left: 50px;
+            width: 190px;
+            height: 50px;
+        }
+
+        /*Links CSS*/
+        .name {
+            color: white;
+        }
+
+        .name+.links {
+            margin-left: 130px;
+        }
+
+        .name+.links a {
+            margin-right: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .name+.links a:hover {
+            color: rgb(238, 69, 98);
+        }
+
+        /*Contact Us button CSS*/
+        .contact-us button {
+            margin-left: 70px;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(238, 69, 98);
+            border-radius: 30px;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        .contact-us button:hover {
+            background-color: white;
+            color: rgb(238, 69, 98);
+
+        }
+
+        /*Middle section css*/
+
+        .middle {
+            margin: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .empty {
+            border: 2.5px solid rgb(238, 69, 98);
+            width: 120px;
+        }
+
+        .middle h2 {
+
+            color: white;
+            font-size: 30px;
+
+        }
+
+        .middle h1 {
+            margin-top: 20px;
+            color: white;
+            font-size: 40px;
+
+        }
+
+        .middle button {
+            margin-top: 15px;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(238, 69, 98);
+            border-radius: 30px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .middle button:hover {
+            background-color: white;
+            color: rgb(238, 69, 98);
+
+        }
+
+        .upcoming-events {
+            background-color: rgb(237, 248, 248);
+        }
+
+        .upcoming-events h1 {
+            font-size: 32px;
+            font-weight: bold;
+            padding-top: 40px;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(2, 43, 82);
+        }
+
+        .empty-upcomeing {
+            border: 2.5px solid rgb(165, 164, 164);
+            width: 120px;
+            margin: auto;
+
+        }
+
+        .upcoming-grid {
+            padding: 20px;
+            margin-left: 45px;
+            margin-right: 45px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+        }
+
+        .image1 {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .image2 {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .image1 img:hover,
+        .image2 img:hover {
+            transform: scale(1.15);
+
+        }
+
+        .image1 p,
+        .image2 p {
+            padding-left: 40px;
+            padding-right: 40px;
+            text-align: center;
+            color: gray;
+        }
+
+        .image1 h3,
+        .image2 h3 {
+            margin-top: 20px;
+            color: rgb(2, 43, 82);
+        }
+
+        .image1 button,
+        .image2 button {
+            margin-top: 15px;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(238, 69, 98);
+            border-radius: 30px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .image1 button:hover {
+            color: rgb(238, 69, 98);
+            background-color: rgb(235, 233, 233);
+        }
+
+        .image2 button:hover {
+            color: rgb(238, 69, 98);
+            background-color: rgb(235, 233, 233);
+        }
+
+        /*footer css*/
+
+        .footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 30px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            margin-left: 130px;
+        }
+
+        .footer-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #ffc107;
+        }
+
+        .footer-section p,
+        .footer-section ul,
+        .footer-section a {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #f8f9fa;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ffc107;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #495057;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+
+        /*Media Query*/
+        @media(min-width:1024px) {
+            .nav-bar {
+                gap: 70px;
+            }
+
+            .name+.links {
+                margin-left: 10px;
+            }
+        }
+
+        @media(min-width:768px) and (max-width:1023px) {
+            .nav-bar {
+                gap: 10px;
+            }
+
+            .name+.links {
+                display: none;
+            }
+
+            .outer-container {
+                width: 130vw;
+            }
+
+            body {
+                width: 130vw;
+            }
+        }
+
+        @media(min-width:320px) and (max-width:767px) {
+            .upcoming-grid {
+                grid-template-columns: repeat(1, 1fr);
+
+
+            }
+
+            .name+.links {
+                display: none;
+            }
+
+            body {
+                width: 140vw;
+            }
+
+            #span-tag1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .span-tag {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="outer-container">
+        <header>
+            <nav class="nav-bar">
+                <div class="name">
+                    <img src="https://t3.ftcdn.net/jpg/02/33/54/10/240_F_233541056_cQoWd98iCaop2hilpTX5lS63VjqsLakn.jpg"
+                        alt="Adventure logo">
+                </div>
+                <div class="links">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Projects</a>
+                </div>
+                <div class="contact-us">
+                    <button>Contact Us</button>
+                </div>
+            </nav>
+        </header>
+        <div class="middle">
+            <h2><span class="span-tag">Explore</span><span class="span-tag">The Colorful World</span></h2>
+            <div class="empty"></div>
+            <h1><span class="span-tag">A WONDERFUL</span> <span class="span-tag">GIFT</span></h1>
+            <button>Learn More</button>
+        </div>
+
+    </section>
+    <main>
+        <section class="upcoming-events">
+            <h1>UPCOMING EVENTS</h1>
+            <div class="empty-upcomeing"></div>
+            <div class="upcoming-grid">
+                <div class="image1">
+                    <img src="https://t3.ftcdn.net/jpg/09/90/89/28/240_F_990892800_pYVc6j2628909CicYNM0KMbLMqh8PxxD.jpg"
+                        alt="everest trek">
+                    <h3>Everest Camp Trek</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Beatae laboriosam repellendus fugiat
+                        eos recusandae, mollitia iusto? Dolor harum facere vero.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="image2">
+                    <img src="https://t3.ftcdn.net/jpg/04/39/79/22/240_F_439792202_9b03xXDmKrBgiMihlnFXBjpOumJ5m0lm.jpg"
+                        alt="everest trek">
+                    <h3>Walking Holiday's</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Beatae laboriosam repellendus fugiat
+                        eos recusandae, mollitia iusto? Dolor harum facere vero.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="image2">
+                    <img src="https://t4.ftcdn.net/jpg/03/04/28/41/240_F_304284161_cI11lVJ4KZ8EmSbb0i8qUFcSFQkRMRGo.jpg"
+                        alt="everest trek">
+                    <h3>Walking Holiday's</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Beatae laboriosam repellendus fugiat
+                        eos recusandae, mollitia iusto? Dolor harum facere vero.</p>
+                    <button>Learn More</button>
+                </div>
+                <div class="image2">
+                    <img src="https://t4.ftcdn.net/jpg/03/94/97/37/240_F_394973761_iDHs6IBP21FX2ac840uDzjECiEUY8UBg.jpg"
+                        alt="everest trek">
+                    <h3>Walking Holiday's</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Beatae laboriosam repellendus fugiat
+                        eos recusandae, mollitia iusto? Dolor harum facere vero.</p>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Explore the world with us! Discover breathtaking destinations, plan your dream vacations, and create
+                    unforgettable memories.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#tours">Tours</a></li>
+                    <li><a href="#blogs">Travel Blogs</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p> 369 Adventure Street, India</p>
+                <p> +1234567890</p>
+                <p> touristwebsite@.com</p>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TouristWebsite | Designed with ❤️ for travel lovers</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
